@@ -1,0 +1,35 @@
+We will be having the Interim Project Presentation, details are mentioned below : 
+Date: 24/10/2022 (24th October,2024) 
+Timings: Class Timings (4:30 pm - 6.00 pm )
+
+For slots and venue, check the attached pdf.
+Total 10-minute slot, which includes presentation and Q&A session. So ideally, the presentation should be for around 6 minutes, and the remaining 4 minutes are for viva. The number of slides for each section can be flexible, but all the sections are mandatory.
+
+Project Progress Slides:
+1. Motivation.
+2. Literature review: Discuss at least two Research Papers, not blogs or articles.
+3. Dataset description
+     a) Different attributes, some visualization, and details regarding the dataset.
+     b) Details regarding whether any kind of preprocessing is required or not.
+4. Methodology. 
+5. Results/Analysis/conclusion. Based upon work done till now.
+6. Timeline: Are you able to follow the timeline that you proposed in the proposal and proposing a future timeline. 
+7. Individual team members’ contributions.
+
+Note: You must only use the IIITD Slides template to build your presentation. 
+
+Project Progress Report:
+Sections for the report, describing your entire work done till now.
+1. Abstract: Motivation
+2. Introduction: describing problem statement.
+3. Literature Survey
+4. Dataset: Dataset details with data preprocessing techniques.
+5. Methodology and model details.
+6. Results and analysis.
+7. Conclusion: your learning from the project, work left, and each member's contribution.
+
+Some important instructions:
+This time, we will be strict regarding the format, using only the CVPR template that was shared before. 
+Max length for the report: 4 pages + references.
+
+Try to make it as organised as possible with details so that not much effort is required during the final submissions.
