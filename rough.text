@@ -1,0 +1,9 @@
+MLproject/
+│
+├── dataset/
+│   └── crop_yield.csv
+│
+├── model/
+│   └── (model files will be saved here)
+│
+└── project.ipynb
