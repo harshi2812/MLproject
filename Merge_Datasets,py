@@ -1,0 +1,29 @@
+import pandas as pd
+
+# Load datasets
+temp = pd.read_csv('temp.csv')  # Contains columns: year, country, avg_temp
+yield_data = pd.read_csv('yield.csv')  # Contains Area, Item, Year, hg/ha_yield (after renaming)
+rainfall = pd.read_csv('rainfall.csv')  # Contains Area, Year, average_rain_fall_mm_per_year
+pesticides = pd.read_csv('pesticides.csv')  # Contains Area, Year, Value (after renaming)
+
+# Rename columns for clarity and uniformity
+yield_data.rename(columns={'Year': 'Year', 'Area': 'Area', 'Element': 'hg/ha_yield'}, inplace=True)
+pesticides.rename(columns={'Value': 'pesticides_tonnes'}, inplace=True)
+
+# Merge datasets step by step
+# Step 1: Merge yield_data with rainfall on Area and Year
+yield_rainfall = pd.merge(yield_data, rainfall, on=['Area', 'Year'], how='inner')
+
+# Step 2: Merge the result with pesticides on Area and Year
+yield_rainfall_pesticides = pd.merge(yield_rainfall, pesticides[['Area', 'Year', 'pesticides_tonnes']], on=['Area', 'Year'], how='inner')
+
+# Step 3: Merge the result with temp (map country in temp to Area in other datasets)
+yield_df = pd.merge(yield_rainfall_pesticides, temp[['country', 'year', 'avg_temp']], left_on=['Area', 'Year'], right_on=['country', 'year'], how='inner')
+
+# Step 4: Drop duplicate or irrelevant columns if necessary
+yield_df.drop(columns=['country', 'year'], inplace=True)
+
+# Save the merged dataset to CSV
+yield_df.to_csv('yield_df.csv', index=False)
+
+print("Merged dataset created as 'yield_df.csv'")
